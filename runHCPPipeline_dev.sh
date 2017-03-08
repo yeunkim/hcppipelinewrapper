@@ -145,7 +145,9 @@ main()
 	
 	# run docker
 	docker run -ti --rm -v ${StudyFolder}:/dataset -v ${outputdir}:/output yeunkim/hcppipelines_v1.1 /dataset /output -subjID ${SUBJ} -dataset DEPRESSION --license_key ${LICENSE} --n_cpus 4 --stages ${STAGES}
-
+	
+	cp -R ${outputdir}/${SUBJ}_output /ifs/faculty/narr/schizo/CONNECTOME/HCP_OUTPUT/
+	# rm -rf ${outputdir} 
 }
 
 main $@
